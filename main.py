@@ -1,23 +1,30 @@
 import math
-
 from square_generator.square_generator import SquareGenerator
 
 class CubicGenerator(SquareGenerator):
-    def generate_cubes(self, start, end):
+    def generate_squares(self, start, end):
+        if start >= end:
+            raise ValueError("Start of the range must be less than the end.")
+        else:
+            return [x ** 2 for x in range(start, end + 1)]
 
+    def generate_cubes(self, start, end):
         return [x ** 3 for x in range(start, end + 1)]
+
 
 cubic_gen = CubicGenerator()
 
 start = 1
 end = 10
 
-cubes = cubic_gen.generate_cubes(start, end)
+try:
+    squares = cubic_gen.generate_squares(start, end)
+    print(f"List of squares of numbers from {start} to {end}:")
+    print(squares)
 
-cube_roots = [math.pow(x, 1/3) for x in cubes]
+    cubes = cubic_gen.generate_cubes(start, end)
+    print(f"List of cubes of numbers from {start} to {end}:")
+    print(cubes)
 
-print(f"List of cubes of numbers from {start} to {end}:")
-print(cubes)
-
-print("Cube roots of the numbers:")
-print(cube_roots)
+except ValueError as e:
+    print(e)
