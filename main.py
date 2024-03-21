@@ -1,3 +1,7 @@
-squares = [x ** 2 for x in range(1, 11)]
-print("List of squares of numbers from 1 to 10:")
+def generate_squares(start, end):
+    return [x ** 2 for x in range(start, end + 1)]
+start = 1
+end = 10
+squares = generate_squares(start, end)
+print(f"List of squares of numbers from {start} to {end}:")
 print(squares)
