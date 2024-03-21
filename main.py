@@ -7,7 +7,7 @@ class SquareGenerator:
             raise ValueError("End of range cannot be less than the start.")
         return [x ** 2 for x in range(start, end + 1)]
 
-
+from square_generator import SquareGenerator
 square_gen = SquareGenerator()
 
 start = 1
