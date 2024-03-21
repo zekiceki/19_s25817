@@ -1,14 +1,9 @@
 import math
 
-class SquareGenerator:
-    def generate_squares(self, start, end):
+from square_generator.square_generator import SquareGenerator
 
-        if end < start:
-            raise ValueError("End of range cannot be less than the start.")
-        return [x ** 2 for x in range(start, end + 1)]
-
-from square_generator import SquareGenerator
 square_gen = SquareGenerator()
+
 
 start = 1
 end = 10
@@ -21,7 +16,6 @@ try:
 
     print(f"List of squares of numbers from {start} to {end}:")
     print(squares)
-
     print("Square roots of the numbers:")
     print(square_roots)
 
